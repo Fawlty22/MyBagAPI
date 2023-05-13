@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DiscModule } from './disc/disc/disc.module';
+import { UserModule } from './user/user/user.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { DiscModule } from './disc/disc/disc.module';
       entities: ['dist/**/*.entity{.ts,.js}'],
     }),
     DiscModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,4 +1,5 @@
-import {Entity, Column, OneToOne, JoinColumn} from 'typeorm';
+import {Entity, Column, OneToOne, JoinColumn, ManyToOne} from 'typeorm';
+import {User} from "../../../User/entities/user.entity";
 
 @Entity()
 export class Disc {
@@ -28,4 +29,7 @@ export class Disc {
 
     @Column({name: 'flight_type'})
     flightType:string;
+
+    @ManyToOne(() => User, (user) => user.discs)
+    user: User;
 }
