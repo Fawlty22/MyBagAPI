@@ -1,6 +1,6 @@
-import {Column} from "typeorm";
+import {BaseDto} from "../../common/base.dto";
 
-export class DiscDto {
+export class DiscDto extends BaseDto {
     brand: string;
     name: string;
     speed: string;

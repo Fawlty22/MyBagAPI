@@ -1,8 +1,9 @@
-import {Entity, Column, OneToOne, JoinColumn, ManyToOne} from 'typeorm';
-import {User} from "../../../User/entities/user.entity";
+import {Entity, Column, ManyToOne} from 'typeorm';
+import {User} from "../../User/entities/user.entity";
+import {BaseEntity} from "../../common/base.entity";
 
 @Entity()
-export class Disc {
+export class Disc extends BaseEntity {
     @Column()
     brand: string;
 

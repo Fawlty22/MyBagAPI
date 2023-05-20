@@ -1,8 +1,9 @@
-import {Entity, Column, OneToOne, JoinColumn, OneToMany} from 'typeorm';
-import {Disc} from "../../Disc/disc/entities/disc.entity";
+import {Entity, Column, OneToMany} from 'typeorm';
+import {Disc} from "../../Disc/entities/disc.entity";
+import {BaseEntity} from "../../common/base.entity";
 
 @Entity()
-export class User {
+export class User extends BaseEntity {
     @Column()
     username: string;
 
