@@ -7,8 +7,10 @@ async function bootstrap() {
   const configService = app.get<ConfigService>(ConfigService)
   let AWS = require("aws-sdk");
   AWS.config.update({
-    accessKeyId: configService.get('accessKeyId'),
-    secretAccessKey: configService.get('secretAccessKey'),
+    credentials: {
+      accessKeyId: configService.get('accessKeyId'),
+      secretAccessKey: configService.get('secretAccessKey'),
+    },
     region: configService.get('region')
   });
 

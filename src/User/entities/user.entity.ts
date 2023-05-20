@@ -10,8 +10,14 @@ export class User extends BaseEntity {
     @Column()
     email: string;
 
-    @Column()
-    password: string;
+    @Column({name: 'first_name'})
+    firstName: string;
+
+    @Column({name: 'last_name'})
+    lastName: string;
+
+    @Column({name: 'cognito_id'})
+    cognitoId: string;
 
     @OneToMany(() => Disc, (disc) => disc.user, {
         cascade: ["insert", "update", "soft-remove"],
